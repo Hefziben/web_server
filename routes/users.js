@@ -17,7 +17,7 @@ router.get("/", function(req, res, next) {
 router.post("/", (req, res) => {
   const newUser = req.body;
   console.log(newUser);
-  const createUser = new User(createUser);
+  const createUser = new User(newUser);
   createUser.save((err, new_User) => {
     if (err) {
       res.send({ mensaje: "error in post request", res: status, err });
