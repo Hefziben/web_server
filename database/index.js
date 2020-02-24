@@ -1,5 +1,4 @@
-// Mongoose
-require('dotenv').config()
+
 const mongoose = require("mongoose");
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
@@ -13,7 +12,7 @@ const MONGO_DB = 'magistv';
 const url = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
 
 // Connect to MongoDB
-    
+
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true  });
 mongoose.connection.once('open', function(){
   console.log('Conection has been made!');
