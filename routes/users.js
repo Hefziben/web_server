@@ -39,7 +39,7 @@ router.get("/:id", (req, res) => {
 //Update User
 router.put("/:id", (req, res) => {
   const userId = req.params.id;
-  User.findByIdAndUpdate(adminId, { $set: req.body }, { new: true })
+  User.findByIdAndUpdate(userId, { $set: req.body }, { new: true })
     .then(data => res.status(200).send(data))
     .catch(err => res.status(400).send(err));
 });
